@@ -3,10 +3,16 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyTextInput extends StatelessWidget {
-  const CurrencyTextInput({super.key, this.controller, this.labelText});
+  const CurrencyTextInput({
+    super.key,
+    this.controller,
+    this.labelText,
+    this.validator,
+  });
 
   final String? labelText;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +32,8 @@ class CurrencyTextInput extends StatelessWidget {
         TextFormField(
           keyboardType: TextInputType.number,
           controller: controller,
+          validator: validator,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           style: theme.inputDecorationTheme.hintStyle,
           decoration: InputDecoration(
             hintText: '0,0',

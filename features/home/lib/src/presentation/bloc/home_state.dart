@@ -14,10 +14,11 @@ class HomeInitial extends HomeState {
 }
 
 class FinancialWellnessScoreResult extends HomeState {
-  const FinancialWellnessScoreResult(this.scoreResult);
+  FinancialWellnessScoreResult(this.scoreResult) : _now = DateTime.now();
 
   final ScoreResult scoreResult;
+  final DateTime _now; // A workaround to dispatch the event with the same value
 
   @override
-  List<Object?> get props => [scoreResult];
+  List<Object?> get props => [scoreResult, _now];
 }

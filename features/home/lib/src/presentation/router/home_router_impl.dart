@@ -11,7 +11,9 @@ class HomeRouterImpl implements HomeRouter {
   }) async {
     await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (_) => const FinancialWellnessScoreScreen(),
+        builder: (_) => FinancialWellnessScoreScreen(
+          scoreResult: scoreResult,
+        ),
       ),
     );
   }
