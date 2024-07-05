@@ -1,10 +1,3 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +11,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../mock/mocks.dart';
-import '../../../../seeds.dart';
 
 void main() {
   group('HomeScreenTest', () {
@@ -59,21 +51,7 @@ void main() {
           .thenReturn(GeneralTestSeeds.themeData);
       when(() => themeManager.themeColors)
           .thenReturn(GeneralTestSeeds.themeColors);
-      when(() => appLocalizations.translate('home.form_title'))
-          .thenAnswer((_) => '');
-      when(() => appLocalizations.translate('home.form_subtitle'))
-          .thenAnswer((_) => '');
-      when(() => appLocalizations.translate('home.annual_income_input_label'))
-          .thenAnswer((_) => '');
-      when(() => appLocalizations.translate('home.monthly_costs_input_label'))
-          .thenAnswer((_) => '');
-      when(() => appLocalizations.translate('global.continue'))
-          .thenAnswer((_) => '');
-      when(() => appLocalizations.translate('home.enter_a_valid_value'))
-          .thenAnswer((_) => Seeds.enterAValidValueKey);
-      when(() => appLocalizations
-              .translate('home.enter_a_number_greater_than_zero'))
-          .thenAnswer((_) => Seeds.enterANumberGreaterThanZeroKey);
+      when(() => appLocalizations.translate(any())).thenAnswer((_) => '');
     });
 
     testWidgets("It should show HomeScreen", (WidgetTester tester) async {
@@ -81,29 +59,5 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(HomeScreen), findsOneWidget);
     });
-
-    // testWidgets(
-    //     "It should show error messages when the values provided are not valid",
-    //     (WidgetTester tester) async {
-    //   await tester.pumpWidget(homeScreenWidget);
-    //   await tester.pumpAndSettle();
-
-    //   final continueButtonFinder =
-    //       find.byKey(const Key('financial_wellness_form.continue_button'));
-
-    //   expect(continueButtonFinder, findsOneWidget);
-
-    //   await tester.tap(continueButtonFinder);
-    //   await tester.pump();
-
-    //   await tester.pumpAndSettle();
-
-    //   final textFinder = find.text(Seeds.enterAValidValueKey);
-    //   final validationMessageFinder =
-    //       find.descendant(of: continueButtonFinder, matching: textFinder);
-    //   expect(validationMessageFinder, findsOneWidget);
-
-    //   //expect(find.text(Seeds.enterANumberGreaterThanZeroKey), findsOneWidget);
-    // });
   });
 }
