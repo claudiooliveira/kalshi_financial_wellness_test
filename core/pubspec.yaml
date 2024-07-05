@@ -9,9 +9,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.1.2
   
   design_system:
     path: ../design_system
+  
+  # Services
+  localizations:
+    path: ./../services/localizations
 
 dependency_overrides:
   intl: ^0.18.0
@@ -20,6 +25,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  mocktail: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

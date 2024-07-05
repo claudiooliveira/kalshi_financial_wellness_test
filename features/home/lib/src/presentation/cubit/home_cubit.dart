@@ -7,9 +7,9 @@ import 'home_state.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(const HomeInitial());
 
-  final formKey = GlobalKey<FormState>();
-  final annualIncomeController = TextEditingController();
-  final monthlyCostsController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  TextEditingController annualIncomeController = TextEditingController();
+  TextEditingController monthlyCostsController = TextEditingController();
 
   void calculateScore() {
     double annualIncome = double.tryParse(annualIncomeController.text) ?? 0;

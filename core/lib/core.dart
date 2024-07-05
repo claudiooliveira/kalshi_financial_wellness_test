@@ -16,3 +16,4 @@ export './src/utils/strings/remove_emojis_from_string.dart';
 export './src/utils/print_wrapped/print_wrapped.dart';
 export './src/utils/spacing/spacing.dart';
 export './src/utils/general_test_seeds/general_test_seeds.dart';
+export './src/utils/material_app_test_widget/material_app_test_widget.dart';
