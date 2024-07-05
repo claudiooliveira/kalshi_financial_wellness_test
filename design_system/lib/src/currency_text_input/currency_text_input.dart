@@ -49,7 +49,6 @@ class CurrencyTextInput extends StatelessWidget {
                 height: 12,
               ),
             ),
-            //labelText: 'Annual income',
           ),
         ),
       ],

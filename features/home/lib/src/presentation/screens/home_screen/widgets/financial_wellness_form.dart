@@ -37,6 +37,7 @@ class FinancialWellnessForm extends StatelessWidget {
               ),
               const SizedBox(height: Spacing.x3),
               CurrencyTextInput(
+                key: const Key('financial_wellness_form.annual_income_input'),
                 controller: cubit.annualIncomeController,
                 validator: (value) => _currencyInputValidator(
                   context: context,
@@ -47,6 +48,7 @@ class FinancialWellnessForm extends StatelessWidget {
               ),
               const SizedBox(height: Spacing.x3),
               CurrencyTextInput(
+                key: const Key('financial_wellness_form.monthly_costs_input'),
                 controller: cubit.monthlyCostsController,
                 labelText:
                     localizations.translate('home.monthly_costs_input_label'),

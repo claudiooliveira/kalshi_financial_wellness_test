@@ -27,6 +27,9 @@ class GeneralTestSeeds {
         }),
       ),
     ),
+    inputDecorationTheme: const InputDecorationTheme(
+      hintStyle: TextStyle(),
+    ),
   );
   static const ThemeColors themeColors = LightThemeColors();
 }

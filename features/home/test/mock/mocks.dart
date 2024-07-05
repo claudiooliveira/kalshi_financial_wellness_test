@@ -17,6 +17,8 @@ class TextEditingControllerMock extends Mock implements TextEditingController {}
 
 class FormKeyMock extends Mock implements GlobalKey<FormState> {}
 
+class ContextMock extends Mock implements BuildContext {}
+
 class FormStateMock extends Mock implements FormState {
   FormStateMock(this.isValid);
 
