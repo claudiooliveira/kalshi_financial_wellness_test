@@ -25,6 +25,7 @@ class HomeScreen extends StatelessWidget {
       // to represent a background color, but in this case, I want to change it
       // to a different color
       backgroundColor: themeColors.lightBackgroundColor,
+
       appBar: const StandardAppBar(),
       body: BlocListener<HomeCubit, HomeState>(
         listener: (context, state) {

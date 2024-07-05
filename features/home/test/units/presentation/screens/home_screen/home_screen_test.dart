@@ -23,7 +23,6 @@ void main() {
     late HomeRouter homeRouter;
     late Widget homeScreenWidget;
     late HomeCubit homeCubit;
-    late BuildContext mainContext;
 
     setUpAll(() {
       registerFallbackValue(ContextMock());
@@ -38,7 +37,6 @@ void main() {
       homeCubit = HomeCubit();
 
       homeScreenWidget = Builder(builder: (context) {
-        mainContext = context;
         return MaterialAppTestWidget(
           themeManager: themeManager,
           appEnvironment: appEnvironment,

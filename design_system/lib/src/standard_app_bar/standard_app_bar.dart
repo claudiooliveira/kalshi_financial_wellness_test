@@ -12,6 +12,7 @@ class StandardAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       key: key,
+      scrolledUnderElevation: 0,
       title: SvgImage.asset(AppImages.logo),
     );
   }
