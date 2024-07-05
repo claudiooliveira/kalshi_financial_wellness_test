@@ -4,8 +4,8 @@ import 'package:home/src/domain/models/score_result.dart';
 
 import 'home_state.dart';
 
-class HomeBloc extends Cubit<HomeState> {
-  HomeBloc() : super(const HomeInitial());
+class HomeCubit extends Cubit<HomeState> {
+  HomeCubit() : super(const HomeInitial());
 
   final formKey = GlobalKey<FormState>();
   final annualIncomeController = TextEditingController();

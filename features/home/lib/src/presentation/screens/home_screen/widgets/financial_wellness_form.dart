@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home/src/presentation/bloc/home_bloc.dart';
+import 'package:home/src/presentation/cubit/home_cubit.dart';
 import 'package:localizations/localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class FinancialWellnessForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context);
     final themeManager = ThemeManager.of(context);
-    final bloc = context.read<HomeBloc>();
+    final cubit = context.read<HomeCubit>();
     final theme = themeManager.currentTheme;
     final themeColors = themeManager.themeColors;
     return Card(
@@ -21,7 +21,7 @@ class FinancialWellnessForm extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(Spacing.x3),
         child: Form(
-          key: bloc.formKey,
+          key: cubit.formKey,
           child: Column(
             children: [
               SvgImage.asset(AppImages.kalshiIcon),
@@ -37,7 +37,7 @@ class FinancialWellnessForm extends StatelessWidget {
               ),
               const SizedBox(height: Spacing.x3),
               CurrencyTextInput(
-                controller: bloc.annualIncomeController,
+                controller: cubit.annualIncomeController,
                 validator: (value) => _currencyInputValidator(
                   context: context,
                   value: value,
@@ -47,7 +47,7 @@ class FinancialWellnessForm extends StatelessWidget {
               ),
               const SizedBox(height: Spacing.x3),
               CurrencyTextInput(
-                controller: bloc.monthlyCostsController,
+                controller: cubit.monthlyCostsController,
                 labelText:
                     localizations.translate('home.monthly_costs_input_label'),
                 validator: (value) => _currencyInputValidator(
@@ -57,7 +57,8 @@ class FinancialWellnessForm extends StatelessWidget {
               ),
               const SizedBox(height: Spacing.x3),
               TextButton(
-                onPressed: bloc.calculateScore,
+                key: const Key('financial_wellness_form.continue_button'),
+                onPressed: cubit.calculateScore,
                 child: Text(
                   localizations.translate('global.continue'),
                   style: theme.textButtonTheme.style!.textStyle!.resolve({}),
