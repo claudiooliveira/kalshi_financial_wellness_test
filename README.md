@@ -2,6 +2,9 @@
 
 Welcome to Kalshi Financial Wellness Test!
 
+Hey, I recorded a video to talk a little about this project [here](https://youtu.be/ojJbVwAvHS0).
+And before starting this test, I was creating a small app to show you, you can see it at [this here](https://youtu.be/vJ43DIuxOUY).
+
 `Small note: I have created the necessary tests in the features/home package and also in the app package.`
 
 ## Introdution
