@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Verifica se o número correto de argumentos foi fornecido
 if [ "$#" -ne 1 ]; then
-    echo "Criar serviço: $0 <service_name>"
+    echo "Create service: $0 <service_name>"
     exit 1
 fi
 
@@ -16,18 +15,15 @@ cd "$services_path" || exit 1
 flutter create --template=package "$service_name"
 
 if [ $? -eq 0 ]; then
-    echo "\n\nPacote '$service_name' criado com sucesso em $services_path."
+    echo "\n\nPackage '$service_name' successfully created in $services_path."
 
-    # Navega para a pasta do pacote criado
     cd "$service_name" || exit 1
 
-    # Cria as pastas necessárias
     mkdir -p "lib/src"
 
-    # Cria o arquivo service_name_service.dart
     touch "lib/src/${service_name}_service.dart"
 
-    echo "Estrutura de pastas e arquivo criados com sucesso em lib/src."
+    echo "Folder and file structure successfully created in lib/src."
 else
-    echo "Erro ao criar o pacote '$service_name'. Verifique se o Flutter está instalado e se o nome do serviço é válido."
+    echo "Error creating the package '$service_name'. Check that Flutter is installed and that the service name is valid."
 fi

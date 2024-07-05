@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Verifica se o número correto de argumentos foi fornecido
 if [ "$#" -ne 1 ]; then
-    echo "Criar feature: $0 <feature_name>"
+    echo "Create feature: $0 <feature_name>"
     exit 1
 fi
 
@@ -16,20 +15,17 @@ cd "$features_path" || exit 1
 flutter create --template=package "$feature_name"
 
 if [ $? -eq 0 ]; then
-    echo "\n\nPacote '$feature_name' criado com sucesso em $features_path."
+    echo "\n\nPackage '$feature_name' created successfully in $features_path."
 
-    # Navega para a pasta do pacote criado
     cd "$feature_name" || exit 1
 
-    # Cria as pastas necessárias
     mkdir -p "lib/src" "lib/src/data" "lib/src/domain" "lib/src/presentation"
 
-    # Cria o arquivo feature_name_feature.dart
     touch "lib/src/${feature_name}_feature.dart"
 
     touch "lib/src/presentation/${feature_name}_screen.dart"
 
-    echo "Estrutura de pastas e arquivo criados com sucesso em lib/src."
+    echo "Folder and file structure successfully created in lib/src."
 else
-    echo "Erro ao criar o pacote '$feature_name'. Verifique se o Flutter está instalado e se o nome da feature é válido."
+    echo "Error creating the package '$service_name'. Check that Flutter is installed and that the feature name is valid."
 fi
