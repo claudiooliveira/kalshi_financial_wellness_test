@@ -95,7 +95,7 @@ flutter build apk --release --flavor prod -t app/lib/main_prod.dart
 
 ## How to create a Feature?
 
-# Run the script passing the parameter with the name of the feature:
+### Run the script passing the parameter with the name of the feature:
 
 ```shell
 ./create_feature.sh feature_name
@@ -103,7 +103,7 @@ flutter build apk --release --flavor prod -t app/lib/main_prod.dart
 
 ## How to create a Service?
 
-# Run the script passing the parameter with the name of the service:
+### Run the script passing the parameter with the name of the service:
 
 ```shell
 ./create_service.sh service_name
