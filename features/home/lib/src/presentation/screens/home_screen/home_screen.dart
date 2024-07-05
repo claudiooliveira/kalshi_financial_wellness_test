@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home/src/presentation/bloc/home_bloc.dart';
 import 'package:home/src/presentation/bloc/home_state.dart';
 import 'package:home/src/presentation/router/home_router.dart';
-import 'package:home/src/presentation/screens/home_screen/widgets/financial_information.dart';
+import 'package:home/src/presentation/screens/home_screen/widgets/footer_financial_information.dart';
 import 'package:home/src/presentation/screens/home_screen/widgets/financial_wellness_form.dart';
 import 'package:home/src/presentation/screens/home_screen/widgets/welcome_message.dart';
 
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: Spacing.x6),
               FinancialWellnessForm(),
               SizedBox(height: Spacing.x6),
-              FinancialInformation(),
+              FooterFinancialInformation(),
             ],
           ),
         ),

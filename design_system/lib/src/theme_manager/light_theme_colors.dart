@@ -44,4 +44,13 @@ class LightThemeColors implements ThemeColors {
 
   @override
   Color get focusedBorderColor => _primaryColor;
+
+  @override
+  Color get scoreHealthyColor => const Color(0xff04c761);
+
+  @override
+  Color get scoreAverageColor => const Color(0xffffc032);
+
+  @override
+  Color get scoreUnhealthyColor => const Color(0xffd32a36);
 }

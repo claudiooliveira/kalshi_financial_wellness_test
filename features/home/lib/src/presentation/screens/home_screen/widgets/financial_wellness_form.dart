@@ -60,6 +60,7 @@ class FinancialWellnessForm extends StatelessWidget {
                 onPressed: bloc.calculateScore,
                 child: Text(
                   localizations.translate('global.continue'),
+                  style: theme.textButtonTheme.style!.textStyle!.resolve({}),
                 ),
               )
             ],

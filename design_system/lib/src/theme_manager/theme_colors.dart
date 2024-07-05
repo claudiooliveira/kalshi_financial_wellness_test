@@ -25,4 +25,9 @@ abstract class ThemeColors {
   Color get defaultBorderColor;
   Color get defaultHintTextColor;
   Color get focusedBorderColor;
+
+  // Score result colors
+  Color get scoreHealthyColor;
+  Color get scoreAverageColor;
+  Color get scoreUnhealthyColor;
 }

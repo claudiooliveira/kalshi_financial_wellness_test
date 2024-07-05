@@ -12,11 +12,14 @@
     "financial_information_encrypted" : "Your financial information is encrypted and \nsecure. We'll never share or sell any of your \npersonal data.",
     "financial_wellness_score_title" : "Here's your <b>financial wellness score</b>.",
     "score_healthy_title" : "Congratulations!",
-    "score_healthy_description" : "Your financial wellness score is <b>Healthy</b>.",
+    "score_healthy_description" : "Your financial wellness score is",
+    "score_healthy_description_part2" : " Healthy.",
     "score_average_title" : "There is room for improvement.",
-    "score_average_description" : "Your financial wellness score is <b>Average</b>.",
+    "score_average_description" : "Your financial wellness score is",
+    "score_average_description_part2" : " Average.",
     "score_unhealthy_title" : "Caution!",
-    "score_unhealthy_description" : "YYour financial wellness score is <b>Unhealthy</b>.",
+    "score_unhealthy_description" : "Your financial wellness score is",
+    "score_unhealthy_description_part2" : " Unhealthy.",
     "enter_a_valid_value" : "Enter a valid value",
     "enter_a_number_greater_than_zero" : "Enter a number greater than zero"
   }

@@ -63,7 +63,8 @@ class ThemeManager {
             textStyle: WidgetStateProperty.resolveWith((states) {
               return _workSansTextStyle.copyWith(
                 fontSize: 16,
-                color: Colors.red,
+                fontWeight: FontWeight.bold,
+                color: themeColors.primaryButtonTextColor,
               );
             }),
             backgroundColor: WidgetStateProperty.resolveWith((states) {
@@ -71,6 +72,25 @@ class ThemeManager {
                 return Colors.black12;
               }
               return themeColors.primaryButtonColor;
+            }),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+            minimumSize: WidgetStateProperty.resolveWith((states) {
+              return const Size(double.infinity, 56);
+            }),
+            side: WidgetStateProperty.resolveWith((states) {
+              return BorderSide(
+                color: themeColors.primaryButtonColor,
+                width: 2.0,
+              );
+            }),
+            textStyle: WidgetStateProperty.resolveWith((states) {
+              return _workSansTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              );
             }),
           ),
         ),
