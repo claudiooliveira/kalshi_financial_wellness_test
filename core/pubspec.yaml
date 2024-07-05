@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  design_system:
+    path: ../design_system
 
 dependency_overrides:
   intl: ^0.18.0

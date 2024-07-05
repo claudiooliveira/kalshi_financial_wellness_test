@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class Seeds {
+class GeneralTestSeeds {
   static const String appName = 'Kalshi App QA';
   static const String baseApiUrl = 'http://localhost:3000/';
   static const Flavor flavor = Flavor.qa;

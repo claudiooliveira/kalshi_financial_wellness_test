@@ -15,7 +15,6 @@ import 'package:localizations/localizations.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'mock/mocks.dart';
-import 'seeds.dart';
 
 void main() {
   //
@@ -32,12 +31,16 @@ void main() {
       themeManager = ThemeManagerMock();
       appLocalizations = AppLocalizationsMock();
 
-      when(() => appEnvironment.appName).thenReturn(Seeds.appName);
-      when(() => appEnvironment.baseApiUrl).thenReturn(Seeds.baseApiUrl);
-      when(() => appEnvironment.flavor).thenReturn(Seeds.flavor);
-      when(() => themeManager.lightTheme).thenReturn(Seeds.themeData);
-      when(() => themeManager.currentTheme).thenReturn(Seeds.themeData);
-      when(() => themeManager.themeColors).thenReturn(Seeds.themeColors);
+      when(() => appEnvironment.appName).thenReturn(GeneralTestSeeds.appName);
+      when(() => appEnvironment.baseApiUrl)
+          .thenReturn(GeneralTestSeeds.baseApiUrl);
+      when(() => appEnvironment.flavor).thenReturn(GeneralTestSeeds.flavor);
+      when(() => themeManager.lightTheme)
+          .thenReturn(GeneralTestSeeds.themeData);
+      when(() => themeManager.currentTheme)
+          .thenReturn(GeneralTestSeeds.themeData);
+      when(() => themeManager.themeColors)
+          .thenReturn(GeneralTestSeeds.themeColors);
       when(() => appLocalizations.translate(any())).thenAnswer((_) => '');
     });
 
