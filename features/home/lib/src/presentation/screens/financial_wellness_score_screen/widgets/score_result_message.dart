@@ -35,22 +35,22 @@ class ScoreResultMessage extends StatelessWidget {
             ),
             const SizedBox(height: Spacing.x3),
             Text(
-              localizations.translate('home.score_average_title'),
+              localizations.translate('home.score_${scoreResult.name}_title'),
               style: theme.textTheme.titleLarge,
             ),
             RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: localizations
-                        .translate('home.score_average_description'),
+                    text: localizations.translate(
+                        'home.score_${scoreResult.name}_description'),
                     style: theme.textTheme.bodyMedium!.copyWith(
                       color: themeColors.secondaryTextColor,
                     ),
                   ),
                   TextSpan(
-                    text: localizations
-                        .translate('home.score_average_description_part2'),
+                    text: localizations.translate(
+                        'home.score_${scoreResult.name}_description_part2'),
                     style: theme.textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: themeColors.secondaryTextColor,

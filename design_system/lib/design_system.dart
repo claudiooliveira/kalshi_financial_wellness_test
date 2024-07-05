@@ -1,5 +1,6 @@
 library design_system;
 
+export 'src/theme_manager/light_theme_colors.dart';
 export 'src/theme_manager/theme_manager.dart';
 export 'src/theme_manager/theme_provider.dart';
 export 'src/theme_manager/theme_colors.dart';

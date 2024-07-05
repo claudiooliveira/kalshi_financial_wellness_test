@@ -5,26 +5,59 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:core/core.dart';
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:home/home.dart';
+import 'package:kalshi_financial_wellness_test/app.dart';
+import 'package:localizations/localizations.dart';
+import 'package:mocktail/mocktail.dart';
 
-import 'package:kalshi_financial_wellness_test/main_qa.dart';
+import 'mock/mocks.dart';
+import 'seeds.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  //
+  // Hey, maybe the tests you're looking for are in the features/home package!
+  //
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  group('App', () {
+    late AppEnvironment appEnvironment;
+    late ThemeManager themeManager;
+    late AppLocalizations appLocalizations;
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    setUp(() {
+      appEnvironment = AppEnvironmentMock();
+      themeManager = ThemeManagerMock();
+      appLocalizations = AppLocalizationsMock();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      when(() => appEnvironment.appName).thenReturn(Seeds.appName);
+      when(() => appEnvironment.baseApiUrl).thenReturn(Seeds.baseApiUrl);
+      when(() => appEnvironment.flavor).thenReturn(Seeds.flavor);
+      when(() => themeManager.lightTheme).thenReturn(Seeds.themeData);
+      when(() => themeManager.currentTheme).thenReturn(Seeds.themeData);
+      when(() => themeManager.themeColors).thenReturn(Seeds.themeColors);
+      when(() => appLocalizations.translate(any())).thenAnswer((_) => '');
+    });
+
+    testWidgets("Check if the HomeFeature is opening when launching the app",
+        (WidgetTester tester) async {
+      // Build our app and trigger a frame.
+      await tester.pumpWidget(
+        ThemeProvider(
+          themeManager: themeManager,
+          child: App(
+            env: appEnvironment,
+            themeManager: themeManager,
+          ),
+        ),
+      );
+
+      await tester.pumpAndSettle();
+
+      expect(find.byType(MaterialApp), findsOneWidget);
+      expect(find.byType(HomeFeature), findsOneWidget);
+    });
   });
 }

@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   go_router: ^13.1.0
   provider: ^6.1.2
+  mocktail: ^1.0.4
 
   # Core
   core:

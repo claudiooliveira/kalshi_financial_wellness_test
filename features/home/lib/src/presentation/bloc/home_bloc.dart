@@ -12,9 +12,29 @@ class HomeBloc extends Cubit<HomeState> {
   final monthlyCostsController = TextEditingController();
 
   void calculateScore() {
-    if (!(formKey.currentState?.validate() ?? false)) {
+    double annualIncome = double.tryParse(annualIncomeController.text) ?? 0;
+    double monthlyCosts = double.tryParse(monthlyCostsController.text) ?? 0;
+
+    if (!(formKey.currentState?.validate() ?? false) || annualIncome <= 0) {
       return;
     }
-    emit(FinancialWellnessScoreResult(ScoreResult.healthy));
+
+    //Calculation for 8%
+    annualIncome = annualIncome * 0.92;
+
+    double annualCosts = monthlyCosts * 12;
+    final scoreResult = calculatePercentage(annualCosts / annualIncome);
+
+    emit(FinancialWellnessScoreResult(scoreResult));
+  }
+
+  ScoreResult calculatePercentage(double percent) {
+    if (percent <= 0.25) {
+      return ScoreResult.healthy;
+    } else if (percent <= 0.75) {
+      return ScoreResult.average;
+    } else {
+      return ScoreResult.unhealthy;
+    }
   }
 }

@@ -1,11 +1,7 @@
 import 'package:design_system/design_system.dart';
-import 'package:design_system/src/theme_manager/light_theme_colors.dart';
-import 'package:design_system/src/theme_manager/theme_colors.dart';
 import 'package:flutter/material.dart';
 
 class ThemeManager {
-  static const TextStyle _rubikRegularTextStyle =
-      TextStyle(fontFamily: 'Rubik-Regular');
   static const TextStyle _rubikMediumTextStyle =
       TextStyle(fontFamily: 'Rubik-Medium');
   static const TextStyle _workSansTextStyle = TextStyle(fontFamily: 'WorkSans');
